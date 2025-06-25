@@ -143,6 +143,9 @@ function handleMouseMove(event: MouseEvent) {
   position: relative;
   left: 116%;
 }
+.cs{
+  position: relative;
+}
 
 .cta-button {
   display: inline-block;
@@ -236,6 +239,47 @@ function handleMouseMove(event: MouseEvent) {
 
   cursor: pointer;
   padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .headline{
+    font-size: 49px;
+    top: 99px;
+  }
+    .headline .cs{
+    font-size: 49px;
+    top: 99px;
+  }
+  .cs1{
+    left: 0;
+  }
+  .cs2{
+    left: 0;
+  }
+  .cta-button{
+    display: none;
+  }
+  .features{
+            top: 150px;
+    left: 35px;
+    display: block;
+  }
+  .features li{
+    font-size: 18px;
+  }
+  .background-layer{
+    width: 0;
+  }
+  .subtitle{
+font-size: 31px;
+  }
+  .promo-banner{
+    height:77vh ;
+  }
+  .promo-left{
+    padding: 0;
+  }
 }
 
 </style>

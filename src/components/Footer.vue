@@ -103,4 +103,9 @@
   color: #bbb;
   margin-top: 10px;
 }
+@media (max-width: 768px) {
+  .footer{
+    display: none;
+  }
+}
 </style>

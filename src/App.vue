@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import 'swiper/swiper-bundle.css'
-
-
 import Uslugi from './components/Uslugi.vue'
 import Uslugy from './components/Uslugi.vue'
 import Menu from './components/Menu.vue'
@@ -14,32 +12,78 @@ import CTA from './components/CTA.vue'
 import Map from './components/map.vue'
 import Menuv from './components/Menuv.vue'
 import Howtop from './components/Howtop.vue'
+import Howtops from './components/Howtops.vue'
 import DownloadBlock from './components/DownloadBlock.vue'
+import Sto from './components/sto.vue'
+import primes from './components/primes.vue'
 
+import Super from './components/super.vue'
+
+import fot from './components/fot.vue'
 
 import Footer from './components/Footer.vue'
+
+
+
+
+
+const showButton = ref(true)
+
+const scrollToContact = () => {
+  const contactBlock = document.querySelector('#fot')
+  if (contactBlock) {
+    contactBlock.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+const handleScroll = () => {
+  const fotBlock = document.querySelector('#fot')
+  if (!fotBlock) return
+
+  const rect = fotBlock.getBoundingClientRect()
+  showButton.value = rect.top > window.innerHeight
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
+
 </script>
 
 <template>
 
   <div class="common-layout">
     <el-container>
-<!--      <Menu/>-->
 
       <Menuv/>
+
       <el-main>
 
-
-
         <Uslugy/>
-
         <About/>
         <Prime/>
         <HowWorks/>
-     
-        <Howtop/>
-           <DownloadBlock/>
+        <Howtops/>
+        <Sto/>
+        <primes/>
+        <Super/>
+        <DownloadBlock/>
         <CTA/>
+        <fot/>
+
+
+  <button
+    v-show="showButton"
+    class="contact-button"
+    @click="scrollToContact"
+  >
+    связаться
+  </button>
 
       </el-main>
 
@@ -52,98 +96,41 @@ import Footer from './components/Footer.vue'
 </template>
 
 
+
 <style scoped>
+
+
+.contact-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+ background-color: #0d72b9;
+  color: white;
+  font-size: 18px;
+  padding: 14px 32px;
+  border-radius: 40px;
+  border: none;
+  z-index: 999;
+  width: 75%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 769px) {
+  .contact-button {
+    display: none;
+  }
+}
+
+
 .el-main{
   padding: 0;
+}
+@media (max-width: 768px) {
+  .el-footer{
+    display: none;
+  }
 }
 </style>
 
 
-
-
-
-<!-- <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
-</template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style> -->

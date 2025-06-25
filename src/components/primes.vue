@@ -3,7 +3,6 @@ import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Map from '@/components/map.vue'
-
 gsap.registerPlugin(ScrollTrigger)
 
 const numberRefs: HTMLElement[] = []
@@ -32,64 +31,61 @@ onMounted(() => {
     }
   })
 })
-
 </script>
 
 <template>
   <section class="skills">
-    <h2 class="skills-title">Наши преимущества</h2>
 
-    <!-- Первый ряд -->
+      <h2 class="skills-title">что мы умеем</h2>
+
+
+
     <div class="skills-grid">
       <div class="skill">
         <div class="number" :ref="el => numberRefs[0] = el">1</div>
         <p>
-          <span class="highlight">География медицинских площадок:</span><br />
-          Казань, Набережные Челны, Нижнекамск, Елабуга, Альметьевск, Лениногорск
+     	Понимаем специфику вашего предприятия. Оперативно оказываем услуги и вовремя оформляем итоговую документацию
         </p>
       </div>
       <div class="skill">
         <div class="number" :ref="el => numberRefs[1] = el">2</div>
         <p>
-          <span class="highlight">Медицинские специалисты</span><br />
-          с опытом работы на промышленных предприятиях
+      Работаем в вашей графике. Мы подстраиваемся под удобный для ваших сотрудников режим и географию работы
         </p>
       </div>
       <div class="skill">
         <div class="number" :ref="el => numberRefs[2] = el">3</div>
-          <p>
-          
-          <span class="highlight">Индивидуальный подход</span><br />
-          Учет специфики вашего производства и особенностей закупочных процедур.
+        <p>
+
+  Рассчитываем наиболее выгодные условия и оказываем только действительно необходимые услуги
         </p>
       </div>
     </div>
 
-    <!-- Второй ряд -->
+
     <div class="skills-grid" style="margin-top: 15px">
       <div class="skill">
         <div class="number" :ref="el => numberRefs[3] = el">4</div>
         <p>
-          <span class="highlight">Юридическая гарантия</span><br />
-          Все заключения соответствуют требованиям Роспотребнадзора и трудового законодательства.
+
+        Разрабатываем и внедряем уникальные программы по требованиям заказчика
         </p>
       </div>
       <div class="skill">
         <div class="number" :ref="el => numberRefs[4] = el">5</div>
         <p>
-          <span class="highlight">Сроки "под ключ"</span><br />
-          От составления списка работников до сдачи отчетности в контролирующие органы.
+
+         Бережно обрабатываем и строго охраняем персональные данные всех наших клиентов
         </p>
       </div>
       <div class="skill">
         <div class="number" :ref="el => numberRefs[5] = el">6</div>
-           <span class="highlight">Гибкая ценовая политика</span>
-      
+        <p>
+
+         	Предупреждаем о рисках: подскажем как не попасть под проверку и не нарушить закон. Безопасность – превыше всего
+        </p>
       </div>
     </div>
-
-    <!-- Карта внизу -->
-    <Map />
   </section>
 </template>
 
@@ -97,6 +93,7 @@ onMounted(() => {
 .skills {
   padding: 60px 20px;
   font-family: sans-serif;
+
   text-align: center;
 }
 
@@ -109,17 +106,18 @@ onMounted(() => {
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
   border-top: 1px solid transparent;
 }
 
 .skill {
-  border-left: none;
+  flex: 1 1 300px;
+  max-width: 550px;
+  border-left: 1px solid #000;
   padding: 0 20px;
-  text-align: left;
 }
 
 .skill:first-child {
@@ -130,49 +128,52 @@ onMounted(() => {
   font-size: 64px;
   font-weight: 300;
   margin-bottom: 20px;
+  text-align: left;
   color: #0D72b9;
 }
 
 .skill p {
   font-size: 27px;
   line-height: 1.5;
-}
-
-.highlight {
-  color: #e72d50;
-  font-weight: bold;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
-  .skills-title {
-    font-size: 27px;
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
   }
 
-  .number {
-    font-size: 27px;
-    font-weight: bold;
+  .skill {
+    border-left: none;
+    border-top: 1px solid #000;
+    padding-top: 20px;
   }
-
-  .skill p {
-    font-size: 18px;
-  }
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.skill {
-  min-height: 0px; /* или auto при необходимости */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
 
   .skill:first-child {
     border-top: none;
+  }
+  .skills-title{
+    font-size: 27px;
+  }
+  .number{
+    font-size: 27px;
+    font-weight: bold;
+  }
+  .skill p{
+    font-size: 18px;
+  }
+  .skill{
+    flex: 1 1 100px;
+  }
+  .skills-grid{
+    display: flex
+;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-top: 1px solid #000000;
   }
 }
 </style>

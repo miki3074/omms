@@ -215,5 +215,11 @@ border: 1px solid;
   .photopk{
     display: none;
   }
+  .cta-buttons{
+    display: none;
+  }
+    .cta-button{
+    display: none;
+  }
 }
 </style>

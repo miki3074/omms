@@ -1,75 +1,53 @@
 <script setup lang="ts">
-
+// Ничего не нужно в логике
 </script>
 
 <template>
   <section class="founders-section">
     <!-- Первый блок -->
     <div class="founder-card light">
-      <div class="left" style="    flex: 1 1 30%;">
-        <img class="avatar" src="@/assets/dir.jpg" />
-        <div class="info">Ильсур Исламов<br/>
+      <div class="left">
+        <img class="avatar" src="@/assets/dir.jpg" alt="Ильсур Исламов" />
+        <div class="info">
+          Ильсур Исламов<br />
           генеральный директор
         </div>
       </div>
       <div class="right">
         <p>
-
-          <span class="link">мы - профессионалы.</span> Наш опыт – организация эффективных медицинских программ для работников и предприятий. Мы быстро и нестандартно мыслим, чтобы сделать медицинскую помощь доступной и качественной
-
+          <span class="link">мы — профессионалы.</span> Наш опыт – организация эффективных медицинских программ для работников и предприятий. Мы быстро и нестандартно мыслим, чтобы сделать медицинскую помощь доступной и качественной.
         </p>
       </div>
     </div>
 
-    <!-- Второй блок (добавлен класс reverse) -->
+    <!-- Второй блок -->
     <div class="founder-card dark reverse">
-      <div class="left dark-text" style="flex: 1 1 21%;">
-        <img class="photo photopk" src="@/assets/doc.webp" />
-
+      <div class="left">
+        <!-- Показывается только на ПК -->
+        <img class="photo photopk" src="@/assets/doc.webp" alt="Степанов Роберт" />
+        <!-- Показывается только на мобилке -->
         <p class="textmob">
-          мы умеем работать как с крупными промышленными предприятиями,так и с небольшими частными компаниями, медицинскими организациями и многими другими сферами
-         </br>
-          Степанов Роберт
+          мы умеем работать как с крупными промышленными предприятиями, так и с небольшими частными компаниями, медицинскими организациями и многими другими сферами.
+          <br /><br />
+          <span class="name">Степанов Роберт</span><br />
           главный врач
         </p>
-
-        <div class="info mt-4">
-        </div>
       </div>
       <div class="right">
+        <!-- Показывается только на ПК -->
         <p class="textpk">
-
-          мы умеем работать как с крупными промышленными предприятиями,так и с небольшими частными компаниями, медицинскими организациями и многими другими сферами
-          <br/>
-          <span> Степанов Роберт<br/>
-            главный врач</span>
+          мы умеем работать как с крупными промышленными предприятиями, так и с небольшими частными компаниями, медицинскими организациями и многими другими сферами.
         </p>
-        <img class="photo photomob" src="@/assets/doc.webp" />
-
+        <!-- Показывается только на мобилке -->
+        <img class="photo photomob" src="@/assets/doc.webp" alt="Степанов Роберт" />
+      
+        
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
-// Просто изображения в assets или URL
-</script>
-
 <style scoped>
-
-
-.founder-card.reverse {
-  flex-direction: row-reverse;
-}
-
-/* Мобильная версия — всегда вертикально, без реверса */
-@media (max-width: 768px) {
-  .founder-card {
-    flex-direction: column !important;
-    text-align: center;
-  }
-}
-
 .founders-section {
   display: flex;
   flex-direction: column;
@@ -78,30 +56,32 @@
   font-family: sans-serif;
 }
 
+/* Общий стиль карточек */
 .founder-card {
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   gap: 20px;
+  padding: 40px 60px;
+  border-radius: 12px;
 }
 
 .founder-card.light {
   background: #fff;
   color: #000;
-  height: 40vh;
 }
 
 .founder-card.dark {
   background: #1e1e1e;
   color: #fff;
-  padding: 40px 67px;
-
-  height: 40vh;
 }
 
-.founder-card .left,
-.founder-card .right {
+.founder-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.left,
+.right {
   flex: 1 1 50%;
   display: flex;
   align-items: center;
@@ -113,20 +93,11 @@
   text-align: center;
 }
 
-.right p,
-.left p {
-  font-size: 40px;
-  line-height: 1.6;
-  max-width: 100%;
-  text-indent: 4%;
-}
-
 .avatar {
-
-
+  max-width: 72px;
+  border-radius: 13%;
   object-fit: cover;
-  margin-bottom: 10px;
-  zoom: 0.294;
+  margin-bottom: 12px;
 }
 
 .photo {
@@ -134,14 +105,17 @@
   border-radius: 10px;
 }
 
-.name {
-  font-weight: bold;
-  text-transform: lowercase;
+.info {
+  font-size: 16px;
+  color: #666;
+  margin-top: 8px;
 }
 
-.title {
-  font-size: 14px;
-  color: #888;
+.right p,
+.left p {
+  font-size: 32px;
+  line-height: 1.5;
+  text-indent: 4%;
 }
 
 .link {
@@ -150,67 +124,89 @@
   text-decoration: none;
 }
 
-.textmob{
+.name {
+  font-weight: bold;
+  color: #fff;
+}
+
+.textmob {
   display: none;
 }
 
-.photomob{
+.textpk {
+  display: block;
+}
+
+.photomob {
   display: none;
 }
 
-/* Адаптация под мобилки */
+.photopk {
+  display: block;
+}
+
+/* ✅ Мобильная адаптация */
 @media (max-width: 768px) {
   .founder-card {
     flex-direction: column;
     text-align: left;
+    padding: 20px;
+    display: block;
   }
 
-  .right, .left {
+  .left,
+  .right {
     flex: 1 1 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
-  .right p, .left p {
-    font-size: 18px;
-  }
-
+  .avatar,
   .photo {
-    max-width: 200px;
+    max-width: 120px;
+    margin-bottom: 10px;
   }
 
-.founders-section{
-  padding: 0 20px;
-}
-.avatar{
-  height: 14vh;
-  zoom: 1.294;
-}
   .right p,
-  .left p{
+  .left p {
+    font-size: 18px;
     text-indent: 0;
+            text-align: left;
   }
 
-  .founder-card.dark{
-    padding: 5%;
-  }
+.left p{
+   text-indent: 9%;
+}
 
-  .founder-card.light{
-    margin-bottom: 10%;
-  }
-
-
-  .textmob{
+  .textmob {
     display: block;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .textpk {
+    display: none;
+  }
+
+  .photomob {
+    display: block;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .photopk {
+    display: none;
+  }
+
+  .info {
+    font-size: 14px;
     text-align: left;
-    text-indent: 4% !important;
+    color: #999;
   }
-  .photomob{
-    display: block;
-  }
-  .textpk{
-    display: none;
-  }
-  .photopk{
-    display: none;
+
+  .founders-section {
+    gap: 30px;
+    padding: 20px;
   }
 }
 </style>

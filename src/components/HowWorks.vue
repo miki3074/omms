@@ -19,57 +19,69 @@ const steps = [
 const connectorRefs = []
 
 onMounted(() => {
-  gsap.from('.steps-title', {
-    opacity: 0,
-    x: -50,
-    duration: 1,
-    scrollTrigger: {
-      trigger: stepsSection.value,
-      start: 'top center',
-    },
-  });
+  const isMobile = window.innerWidth <= 768
 
-  stepRefs.forEach((el, i) => {
-    gsap.from(el, {
+  if (!isMobile) {
+    gsap.from('.steps-title', {
       opacity: 0,
-      y: 50,
-      duration: 0.8,
-      delay: i * 0.2,
+      x: -50,
+      duration: 1,
       scrollTrigger: {
-        trigger: el,
-        start: 'top 80%',
-        toggleActions: 'play none none none',
+        trigger: stepsSection.value,
+        start: 'top center',
       },
-    });
-  });
+    })
 
-  connectorRefs.forEach((el, i) => {
-    gsap.from(el, {
-      opacity: 0,
-      scaleY: 0.2,
-      transformOrigin: 'top',
-      duration: 0.6,
-      delay: i * 0.2 + 0.2, // немного позже шага
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 80%',
-        toggleActions: 'play none none none',
-      },
-    });
-  });
+    stepRefs.forEach((el, i) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        delay: i * 0.2,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      })
+    })
 
-  if (window.innerWidth > 768) {
+    connectorRefs.forEach((el, i) => {
+      gsap.from(el, {
+        opacity: 0,
+        scaleY: 0.2,
+        transformOrigin: 'top',
+        duration: 0.6,
+        delay: i * 0.2 + 0.2,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      })
+    })
+
     ScrollTrigger.create({
       trigger: stepsSection.value,
       start: 'top top',
       end: '+=1200',
       scrub: true,
       pin: '.steps-left',
-      pinSpacing: false
-    });
-  }
+      pinSpacing: false,
+    })
+  } else {
+    // На мобильных — сразу показываем шаги и линии
+    stepRefs.forEach(el => {
+      el.style.opacity = '1'
+      el.style.transform = 'none'
+    })
 
-});
+    connectorRefs.forEach(el => {
+      el.style.opacity = '1'
+      el.style.transform = 'none'
+    })
+  }
+})
 </script>
 
 <template>
@@ -224,12 +236,27 @@ onMounted(() => {
   }
 
   .steps-title {
-    font-size: 32px;
+    display: none;
   }
 
   .step {
-    width: 220px;
-    height: 220px;
+    width: 175px;
+    height: 175px;
   }
+  .steps-section{
+    padding: 0 20px;
+  }
+    .edo-note{
+        text-align: left;
+        width: 74%;
+        height: auto;
+        font-size: 27px;
+    }
+    .cta-button{
+      display: none;
+    }
+    .step-number{
+      font-size: 18px;
+    }
 }
 </style>

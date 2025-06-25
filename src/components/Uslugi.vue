@@ -99,7 +99,7 @@ const openModal = (section: Section) => {
     <el-main>
     <div class="container">
       <div class="section-head col-sm-12">
-        <h4><span class="h4h4">что мы предлагаем</span></h4>
+        <h4 class="ffdd"><span class="h4h4">что мы предлагаем</span></h4>
       </div>
 
       <div class="grid-container">
@@ -131,6 +131,10 @@ const openModal = (section: Section) => {
 
 
 <style scoped>
+.ffdd{
+  margin-bottom: 6%;
+}
+
 .frfr{
   font-size: 39px;
   font-weight: 500;
@@ -139,7 +143,7 @@ const openModal = (section: Section) => {
 .h4h4{
   vertical-align: middle;
   color: #000000;
-  font-size: 64px;
+  font-size: 84px;
   font-family: 'HelveticaNeue', Arial, sans-serif;
   line-height: 1.2;
   font-weight: 400;
@@ -178,7 +182,7 @@ const openModal = (section: Section) => {
 .grid-item {
   position: relative;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 45px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-weight: 600;
@@ -200,16 +204,27 @@ const openModal = (section: Section) => {
 }
 
 .item-title {
-  font-size: 24px;
-  font-weight: 600;
-  text-align: left;
+font-size: 36px;
+    font-weight: 600;
+    text-align: left;
+    position: relative;
+    top: -3px;
+    height: 110px;
+    display: flex
+;
+    align-items: flex-start;
+    justify-content: flex-start;
+    line-height: 1.2;
+    white-space: normal;
+    word-break: break-word;
 }
+
 
 .icon-wrapper {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 48px;
+  font-size: 67px;
 }
 .el-main{
   padding: 60px;
@@ -222,6 +237,46 @@ const openModal = (section: Section) => {
   .grid-item{
     margin-top: 10px;
   }
+  .h4h4{
+    font-size: 27px;
+  }
+  .el-main{
+padding: 16px !important;
+  }
+
+.item-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    line-height: 1.2;
+    white-space: normal;
+    word-break: break-word;
+        height: 73px;
+                align-items: anchor-center;
+                        width: 83%;
+}
+.grid-item[data-v-ecd4fbd9] {
+    position: relative;
+    background-color: #ffffff;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    min-height: 74px;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.icon-wrapper[data-v-ecd4fbd9] {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    font-size: 40px;
+}
+
 }
 </style>
 
