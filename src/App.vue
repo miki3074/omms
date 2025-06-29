@@ -22,9 +22,12 @@ import Super from './components/super.vue'
 import fot from './components/fot.vue'
 
 import Footer from './components/Footer.vue'
+import Abouts from './components/Abouts.vue'
 
-
-
+import Headers from './components/Headers.vue'
+import Uslugto from './components/Uslugto.vue'
+import Advant from './components/Advant.vue'
+import Workstep from './components/Workstep.vue'
 
 
 const showButton = ref(true)
@@ -60,12 +63,20 @@ onBeforeUnmount(() => {
   <div class="common-layout">
     <el-container>
 
+      <Headers/>
       <Menuv/>
 
       <el-main>
 
+ 
         <Uslugy/>
+        <Uslugto/>
+        
+        <Abouts/>
         <About/>
+     
+        <Advant/>
+        <Workstep/>
         <Prime/>
         <HowWorks/>
         <Howtops/>
@@ -98,6 +109,8 @@ onBeforeUnmount(() => {
 
 
 <style scoped>
+
+
 
 
 .contact-button {

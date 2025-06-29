@@ -173,8 +173,7 @@ const openModal = (section: Section) => {
 
 .grid-container {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* по умолчанию 4 */
   gap: 20px;
   margin-top: 40px;
 }
@@ -188,8 +187,8 @@ const openModal = (section: Section) => {
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   min-height: 192px;
-  display: flex
-;
+  display: flex;
+  padding-left: 25px;
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -204,7 +203,7 @@ const openModal = (section: Section) => {
 }
 
 .item-title {
-font-size: 36px;
+
     font-weight: 600;
     text-align: left;
     position: relative;
@@ -220,6 +219,27 @@ font-size: 36px;
 }
 
 
+.item-title {
+  font-size: clamp(18px, 2vw, 36px); /* от 18 до 36px */
+}
+
+.h4h4 {
+  font-size: clamp(32px, 6vw, 84px);
+}
+
+.el-dialog__title {
+  font-size: clamp(20px, 4vw, 40px);
+}
+
+.frfr {
+  font-size: clamp(18px, 3vw, 39px);
+}
+
+.dede {
+  font-size: clamp(16px, 2.8vw, 34px);
+}
+
+
 .icon-wrapper {
   position: absolute;
   top: 10px;
@@ -229,6 +249,26 @@ font-size: 36px;
 .el-main{
   padding: 60px;
 }
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+.item-title{
+  height: 45px;
+}
+.grid-item{
+      min-height: 49px;
+}
+.icon-wrapper{
+      font-size: 47px;
+}
+
+
+
+}
+
+
 /* Адаптация */
 @media (max-width: 768px) {
   .grid-container {
@@ -243,6 +283,9 @@ font-size: 36px;
   .el-main{
 padding: 16px !important;
   }
+
+
+
 
 .item-title {
     font-size: 18px;

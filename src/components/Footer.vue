@@ -1,111 +1,114 @@
 <template>
-  <footer class="footer">
-    <el-container>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <h2 class="footer-title">Реквизиты</h2>
+      <p>Общество с ограниченной ответственностью Научно-производственное объединение «Объединенные медицинские системы» (ООО НПО «ОМС»)</p>
+      
+      <div class="addresses">
+        <div class="address-block">
+          <h3>Юридический адрес:</h3>
+          <p>423831, Республика Татарстан, г. Набережные Челны, ул. Шамиля Усманова, д. 63, офис 208в.</p>
+        </div>
+        <div class="address-block">
+          <h3>Адрес центрального офиса:</h3>
+          <p>420111, Республика Татарстан, г. Казань, ул. Пушкина, д. 12, офис 404.</p>
+        </div>
+        <div class="address-block">
+          <h3>Почтовый адрес:</h3>
+          <p>420132, Республика Татарстан, г. Казань, а/я 42.</p>
+        </div>
+      </div>
 
-      <el-row :gutter="40" class="footer-content">
-        <el-col :xs="24" :md="12" class="footer-section">
-          <h3 class="footer-title">ООО НПО «ОМС»</h3>
-          <p>Общество с ограниченной ответственностью Научно-производственное объединение «Объединенные медицинские системы»</p>
-        </el-col>
-
-
-        <el-col :xs="24" :md="12" class="footer-section">
-          <h4>Контактные адреса</h4>
-          <ul class="footer-list">
-            <li><strong>Юридический адрес:</strong> 423831, Республика Татарстан, г. Набережные Челны, ул. Шамиля Усманова, д. 63, офис 208в.</li>
-            <li><strong>Центральный офис:</strong> 420111, Республика Татарстан, г. Казань, ул. Пушкина, д. 12, офис 404.</li>
-            <li><strong>Почтовый адрес:</strong> 420132, Республика Татарстан, г. Казань, а/я 42.</li>
-          </ul>
-        </el-col>
-      </el-row>
-
-      <!-- Разделительная линия -->
-      <hr class="footer-divider" >
-
-      <!-- ОГРН, ИНН, КПП -->
-      <div class="footer-meta">
+      <div class="ids">
         <p><strong>ОГРН:</strong> 1201600094190</p>
         <p><strong>ИНН:</strong> 1650397806</p>
         <p><strong>КПП:</strong> 165001001</p>
       </div>
-
-
-      </hr>
-    </el-container>
+    </div>
   </footer>
 </template>
 
-<script setup lang="ts">
-// Никакой логики не требуется пока
-</script>
-
 <style scoped>
-
-.el-divider__text.is-center{
-  margin-top: 70px;
-
-}
-
-.el-divider__text{
-  background: #0D72b9 !important;
-}
-
-.footer {
-  background-color: #0D72b9;
+.site-footer {
+  background-color: #0d72b9;
   color: white;
-  padding: 40px 117px;
-  font-size: 14px;
-  line-height: 1.6;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .footer-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-.footer-section h4 {
-  font-size: 16px;
-  margin-bottom: 8px;
+.addresses {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 30px;
 }
 
-.footer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.address-block {
+  flex: 1 1 280px;
+  min-width: 250px;
+  text-align: left;
 }
 
-.footer-list li {
+.address-block h3 {
+  font-size: 18px;
+  font-weight: 600;
   margin-bottom: 6px;
+  color: #cce4ff;
 }
 
-.footer-divider {
-  //margin: 30px 0 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-color: rgba(255, 255, 255, 0.2);
+.ids {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-weight: 600;
 }
 
-.footer-meta {
-
-  font-size: 13px;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.footer-meta p {
+.ids p {
   margin: 4px 0;
+  min-width: 120px;
+  text-align: left;
 }
 
-.footer-bottom {
-  text-align: center;
-  font-size: 13px;
-  color: #bbb;
-  margin-top: 10px;
-}
-@media (max-width: 768px) {
-  .footer{
-    display: none;
+/* Адаптив для мобильных */
+@media (max-width: 640px) {
+  .addresses {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .address-block {
+    text-align: center;
+    min-width: auto;
+  }
+
+  .ids {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .ids p {
+    min-width: auto;
   }
 }
 </style>

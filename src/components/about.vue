@@ -113,7 +113,7 @@
 
 .right p,
 .left p {
-  font-size: 32px;
+  font-size: clamp(18px, 2.5vw, 32px); 
   line-height: 1.5;
   text-indent: 4%;
 }
