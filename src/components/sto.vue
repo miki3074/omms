@@ -4,12 +4,12 @@
 
 <template>
   <section class="founders-section">
-    <h2 class="why-title">Сколько это стоит</h2>
+    <h2 class="why-title zagol">Сколько это стоит</h2>
     <div class="founder-card light">
       <div class="left"></div>
       <div class="right">
         
-        <p>
+        <p class="textt">
           стоимость услуг рассчитывается персонально для каждой компании. Мы учитываем количество сотрудников, специфику задач и особенности бизнес-процессов — <span style="color: rgb(0, 66, 222);">потому что каждый бизнес уникален</span>.
         </p>
       </div>

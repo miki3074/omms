@@ -3,34 +3,34 @@
     <div class="footer-container">
       <!-- Левая часть — реквизиты -->
       <div class="footer-info">
-        <h2 class="footer-title">Реквизиты</h2>
-        <p>
-          <strong>Общество с ограниченной ответственностью<br />
+        <h2 class="footer-title zagol">Реквизиты</h2>
+        <p class="textt">
+          <strong class="textt">Общество с ограниченной ответственностью<br />
           Научно-производственное объединение<br />
           «Объединенные медицинские системы» (ООО НПО «ОМС»)</strong>
         </p>
 
-        <p>
-          <strong>Юридический адрес:</strong><br />
+        <p class="textt">
+          <strong class="textt">Юридический адрес:</strong><br />
           423831, Республика Татарстан, г. Набережные Челны,<br />
           ул. Шамиля Усманова, д. 63, офис 208в.
         </p>
 
-        <p>
-          <strong>Адрес центрального офиса:</strong><br />
+        <p class="textt">
+          <strong class="textt">Адрес центрального офиса:</strong><br />
           420111, Республика Татарстан, г. Казань,<br />
           ул. Пушкина, д. 12, офис 404.
         </p>
 
-        <p>
-          <strong>Почтовый адрес:</strong><br />
+        <p class="textt">
+          <strong class="textt">Почтовый адрес:</strong><br />
           420132, Республика Татарстан, г. Казань, а/я 42.
         </p>
 
-        <p>
-          <strong>ОГРН:</strong> 1201600094190<br />
-          <strong>ИНН:</strong> 1650397806<br />
-          <strong>КПП:</strong> 165001001
+        <p class="textt">
+          <strong class="textt">ОГРН:</strong> 1201600094190<br />
+          <strong class="textt">ИНН:</strong> 1650397806<br />
+          <strong class="textt">КПП:</strong> 165001001
         </p>
       </div>
 
@@ -47,7 +47,7 @@
     </div>
 
     <!-- Нижняя полоса -->
-    <div class="footer-bottom">
+    <div class="footer-bottom zagol">
       © {{ new Date().getFullYear() }} ООО НПО «ОМС». Все права защищены.
     </div>
   </footer>

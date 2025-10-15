@@ -2,22 +2,22 @@
   <section class="cta-section">
     <div class="cta-container">
       <div class="cta-text">
-        <h2 class="cta-title">Остались вопросы?</h2>
-        <p class="cta-subtitle">
+        <h2 class="cta-title zagol">Остались вопросы?</h2>
+        <p class="cta-subtitle textt">
           Наш специалист проконсультирует вас по:
         </p>
 
         <ul class="cta-list">
-          <li>▸ перечню необходимых осмотров</li>
-          <li>▸ требованиям к опасным производствам</li>
-          <li>▸ стоимости услуг для вашего предприятия</li>
+          <li class="textt">▸ перечню необходимых осмотров</li>
+          <li class="textt">▸ требованиям к опасным производствам</li>
+          <li class="textt">▸ стоимости услуг для вашего предприятия</li>
         </ul>
 
         <p class="cta-email">
-          <a href="mailto:info@rcpprt.ru">info@rcpprt.ru</a>
+          <a href="mailto:info@rcpprt.ru" class="textt">info@rcpprt.ru</a>
         </p>
 
-        <a href="#contact" class="cta-button">связаться</a>
+        <a href="#contact" class="cta-button textt">связаться</a>
       </div>
     </div>
   </section>

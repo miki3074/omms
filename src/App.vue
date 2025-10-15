@@ -31,6 +31,7 @@ import Workstep from './components/Workstep.vue'
 
 import Test from './components/test.vue'
 
+import Pricing from './components/pricing.vue'
 
 const showButton = ref(true)
 
@@ -85,7 +86,7 @@ onBeforeUnmount(() => {
         <Howtops/>
           <primes/>
         <Sto/>
-       
+       <Pricing/>
         <!-- <Super/> -->
         <!-- <DownloadBlock/> -->
         <CTA/>

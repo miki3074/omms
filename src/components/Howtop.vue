@@ -104,7 +104,7 @@ onMounted(async () => {
   <section class="why-section" ref="sectionRef">
     <div class="why-wrapper">
       <div class="why-left">
-        <h2 class="why-title">{{ leftTitle }}</h2>
+        <h2 class="why-title zagol">{{ leftTitle }}</h2>
 
         <div
           class="why-left-item"
@@ -112,8 +112,8 @@ onMounted(async () => {
           :key="item.number"
           :style="{ height: leftHeights[index] + 'px', overflow: 'hidden' }"
         >
-          <div class="why-left-number">({{ item.number }})</div>
-          <div class="why-left-text">{{ item.text }}</div>
+          <div class="why-left-number textt">({{ item.number }})</div>
+          <div class="why-left-text textt">{{ item.text }}</div>
         </div>
       </div>
 
@@ -130,8 +130,8 @@ onMounted(async () => {
           >
             <div class="why-icon">{{ item.icon }}</div>
             <div class="why-content">
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.text }}</p>
+              <h3 class="zagol">{{ item.title }}</h3>
+              <p class="textt">{{ item.text }}</p>
             </div>
           </div>
         </div>

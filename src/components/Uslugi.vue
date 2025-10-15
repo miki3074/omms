@@ -85,7 +85,7 @@ const openModal = (section: Section) => {
     <el-main>
       <div class="container">
         <div class="section-header">
-          <h4><span>Что мы предлагаем</span></h4>
+          <h4 class="zagol"><span class="zagol">Что мы предлагаем</span></h4>
         </div>
 
         <div class="grid-container">
@@ -98,7 +98,7 @@ const openModal = (section: Section) => {
             <div class="icon-wrapper">
               <el-icon><BottomLeft /></el-icon>
             </div>
-            <div class="item-title">{{ section.title }}</div>
+            <div class="item-title zagol">{{ section.title }}</div>
           </div>
         </div>
 
@@ -109,15 +109,15 @@ const openModal = (section: Section) => {
   :style="{ transform: `scale(${dialogZoom})`, transformOrigin: 'center center' }"
 >
           <template #header>
-            <h2 class="dialog-title">{{ activeSection?.subtitle }}</h2>
+            <h2 class="dialog-title zagol">{{ activeSection?.subtitle }}</h2>
           </template>
 
           <template #default>
-            <div v-for="(point, i) in activeSection?.points" :key="i" class="dialog-text">
+            <div v-for="(point, i) in activeSection?.points" :key="i" class="dialog-text textt">
               {{ point }}
             </div>
             <div class="dialog-footer">
-              <button class="apply-btn">Оставить заявку</button>
+              <button class="apply-btn textt">Оставить заявку</button>
             </div>
           </template>
         </el-dialog>

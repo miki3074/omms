@@ -36,26 +36,26 @@ onMounted(() => {
 <template>
   <section class="skills">
 
-      <h2 class="skills-title">что мы умеем</h2>
+      <h2 class="skills-title zagol">что мы умеем</h2>
 
 
 
     <div class="skills-grid">
       <div class="skill">
-        <div class="number" :ref="el => numberRefs[0] = el">1</div>
-        <p>
+        <div class="number zagol" :ref="el => numberRefs[0] = el">1</div>
+        <p class="textt">
      	Понимаем специфику вашего предприятия. Оперативно оказываем услуги и вовремя оформляем итоговую документацию
         </p>
       </div>
       <div class="skill">
-        <div class="number" :ref="el => numberRefs[1] = el">2</div>
-        <p>
+        <div class="number zagol" :ref="el => numberRefs[1] = el">2</div>
+        <p class="textt">
       Работаем в вашей графике. Мы подстраиваемся под удобный для ваших сотрудников режим и географию работы
-        </p>
+        </p class="textt">
       </div>
       <div class="skill">
-        <div class="number" :ref="el => numberRefs[2] = el">3</div>
-        <p>
+        <div class="number zagol" :ref="el => numberRefs[2] = el">3</div>
+        <p class="textt">
 
   Рассчитываем наиболее выгодные условия и оказываем только действительно необходимые услуги
         </p>
@@ -65,23 +65,22 @@ onMounted(() => {
 
     <div class="skills-grid" style="margin-top: 8%">
       <div class="skill">
-        <div class="number" :ref="el => numberRefs[3] = el">4</div>
-        <p>
+        <div class="number zagol" :ref="el => numberRefs[3] = el">4</div>
+        <p class="textt">
 
         Разрабатываем и внедряем уникальные программы по требованиям заказчика
         </p>
       </div>
       <div class="skill">
-        <div class="number" :ref="el => numberRefs[4] = el">5</div>
-        <p>
+        <div class="number zagol" :ref="el => numberRefs[4] = el">5</div>
+        <p class="textt">
 
          Бережно обрабатываем и строго охраняем персональные данные всех наших клиентов
         </p>
       </div>
       <div class="skill">
-        <div class="number" :ref="el => numberRefs[5] = el">6</div>
-        <p>
-
+        <div class="number zagol" :ref="el => numberRefs[5] = el">6</div>
+        <p class="textt">
          	Предупреждаем о рисках: подскажем как не попасть под проверку и не нарушить закон. Безопасность – превыше всего
         </p>
       </div>

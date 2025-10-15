@@ -31,26 +31,26 @@ onMounted(() => {
       <!-- 📍 Фиксированный блок в верхнем левом углу -->
       <div class="brand fixed-brand">
     <img src="@/assets/logo2.svg" alt="Логотип" class="logo" />
-    <p class="brand-sub">
+    <p class="brand-sub textt">
       медицинское обеспечение <br /> промышленных предприятий
     </p>
   </div>
 
       <div class="hero-left">
         <div class="headline">
-          <h1 class="word first">скорость.</h1>
-          <h1 class="word second">экспертиза.</h1>
-          <h1 class="word third">вовлечённость.</h1>
+          <h1 class="word first zagol">скорость.</h1>
+          <h1 class="word second zagol">экспертиза.</h1>
+          <h1 class="word third zagol">вовлечённость.</h1>
         </div>
 
         <div class="cta-and-features">
-          <a href="#contact" class="cta">связаться</a>
+          <a href="#contact" class="cta textt">связаться</a>
 
           <ul class="features">
-            <li>→ более 100 сотрудников</li>
-            <li>→ вовремя сдаём отчётность</li>
-            <li>→ опытная команда</li>
-            <li>→ ориентируемся на заказчика</li>
+            <li class="textt">→ более 100 сотрудников</li>
+            <li class="textt">→ вовремя сдаём отчётность</li>
+            <li class="textt">→ опытная команда</li>
+            <li class="textt">→ ориентируемся на заказчика</li>
           </ul>
         </div>
       </div>
@@ -122,8 +122,8 @@ onMounted(() => {
 }
 
 .word {
-  font-size: clamp(48px, 8vw, 110px);
-  font-weight: 500;
+  font-size: clamp(44px, 8vw, 110px);
+  font-weight: 900;
   line-height: 1.05;
   margin: 0;
   white-space: nowrap;

@@ -57,15 +57,15 @@ const rightItems = ref<WhyItem[]>([
 <template>
   <section class="why-section">
     <div class="why-left">
-      <h2 class="why-title">{{ leftTitle }}</h2>
+      <h2 class="why-title zagol">{{ leftTitle }}</h2>
 
       <div
         v-for="(item, index) in leftItems"
         :key="item.number"
         class="why-left-item"
       >
-        <div class="why-left-number">{{ item.number }})</div>
-        <div class="why-left-text">{{ item.text }}</div>
+        <div class="why-left-number textt">{{ item.number }})</div>
+        <div class="why-left-text textt">{{ item.text }}</div>
 
         <button class="toggle-btn" @click="toggle(index)">
           {{ activeIndex === index ? 'Скрыть' : 'А как у других?' }}
@@ -84,8 +84,8 @@ const rightItems = ref<WhyItem[]>([
             >
               <div class="why-icon">{{ alt.icon }}</div>
               <div class="why-content">
-                <h3>{{ alt.title }}</h3>
-                <p>{{ alt.text }}</p>
+                <h3 class="zagol">{{ alt.title }}</h3>
+                <p class="textt">{{ alt.text }}</p>
               </div>
             </div>
           </div>

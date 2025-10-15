@@ -98,11 +98,11 @@ onMounted(async () => {
   <section class="steps-section" ref="stepsSection">
     <div class="steps-wrapper">
       <div class="steps-left">
-        <h2 class="steps-title">
+        <h2 class="steps-title zagol">
           целая система, <br />а не просто медицинский осмотр
         </h2>
         <p class="edo-note">
-          <a href="#contact" class="cta-button">связаться</a>
+          <a href="#contact" class="cta-button textt">связаться</a>
         </p>
       </div>
 
@@ -110,7 +110,7 @@ onMounted(async () => {
         <template v-for="(step, i) in steps" :key="i">
           <div class="step" :ref="el => (stepRefs[i] = el)">
             <div class="circle-bg"></div>
-            <div class="step-number">{{ step.title }}</div>
+            <div class="step-number zagol">{{ step.title }}</div>
           </div>
         </template>
       </div>
@@ -141,8 +141,8 @@ onMounted(async () => {
 }
 
 .steps-title {
-  font-size: clamp(36px, 6vw, 100px);
-  font-weight: 100;
+  font-size: clamp(27px, 6vw, 100px);
+  font-weight: 900;
   color: #222;
 }
 
@@ -235,7 +235,7 @@ onMounted(async () => {
   }
 
   .steps-title {
-    display: none;
+    text-align: left;
   }
 
   .cta-button {
