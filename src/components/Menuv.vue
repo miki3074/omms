@@ -29,12 +29,12 @@ onMounted(() => {
 
     <div class="hero-content">
       <!-- 📍 Фиксированный блок в верхнем левом углу -->
-      <div class="brand fixed-brand">
-    <img src="@/assets/logo2.svg" alt="Логотип" class="logo" />
-    <p class="brand-sub textt">
-      медицинское обеспечение <br /> промышленных предприятий
-    </p>
-  </div>
+<!--      <div class="brand fixed-brand">-->
+<!--    <img src="@/assets/logo2.svg" alt="Логотип" class="logo" />-->
+<!--    <p class="brand-sub textt">-->
+<!--      медицинское обеспечение <br /> промышленных предприятий-->
+<!--    </p>-->
+<!--  </div>-->
 
       <div class="hero-left">
         <div class="headline">
@@ -181,7 +181,7 @@ onMounted(() => {
 /* === Адаптив === */
 @media (max-width: 768px) {
   .fixed-brand {
-  
+
     top: 20px;
     left: 20px;
     text-align: left;
